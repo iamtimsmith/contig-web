@@ -1,0 +1,54 @@
+.board {
+  position: relative;
+}
+
+.gameOver {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, black, transparent 50%);
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.gameOver p {
+  margin: 0 0 0.5rem;
+}
+
+.winner {
+  font-size: 2rem;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, var(--grid-size));
+}
+
+.grid.disabled {
+  filter: blur(0.3rem);
+}
+
+.item {
+  width: 100%;
+  height: var(--grid-size);
+  border: 1px solid black;
+  background: transparent;
+  font-size: calc(var(--grid-size) / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item.player1 {
+  background: var(--player1-color);
+}
+
+.item.player2 {
+  background: var(--player2-color);
+}
