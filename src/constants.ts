@@ -6,3 +6,12 @@ export const boardNumbers = [
 ];
 
 export const maxTurns = 1;
+
+export const diceResults = {
+  1: "⚀",
+  2: "⚁",
+  3: "⚂",
+  4: "⚃",
+  5: "⚄",
+  6: "⚅",
+};

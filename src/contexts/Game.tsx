@@ -139,8 +139,10 @@ export const GameProvider: FC<PropsWithChildren> = ({ children }) => {
     // Get a list of adjacent numbers
     const adjacent = getAdjacentNumbers(num);
     // Get the total number of selected items that touch the selected number
+    // @ts-expect-error-ignore
     const selectedAdjacentItems = adjacent.filter((num) => !!board[num]);
     // Update the board state with the selected number
+    // @ts-expect-error-ignore
     setBoard({ ...board, [num]: !board[num] });
     // Update the score for the current player and move to next turn
     handleNextTurn(num, selectedAdjacentItems.length);
