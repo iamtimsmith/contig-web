@@ -1,36 +1,11 @@
-import clsx from "clsx";
-import { useGameContext } from "~/contexts/Game";
+import { Button } from "~/components/Button";
 import styles from "./styles.module.css";
 import { getWinner } from "~/helpers/getWinner";
-import { Button } from "~/components/Button";
-import { useDiceContext } from "~/contexts/Dice";
+import { useStore } from "~/store";
+import clsx from "clsx";
 
 export const Board = () => {
-  const {
-    board,
-    handleResetGame,
-    handleSelect,
-    isGameOver,
-    player1,
-    player2,
-    turn,
-  } = useGameContext();
-  const { rolls, handleResetDice } = useDiceContext();
-
-  const handleReset = () => {
-    handleResetGame();
-    handleResetDice();
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleNextTurn = (e: any) => {
-    const item = Number(e.target.innerText);
-    handleSelect(item);
-    handleResetDice();
-  };
-
-  // If the game has not started, do not show the board
-  if (turn === 0) return;
+  const { board, isGameOver, player1, player2 } = useStore();
 
   return (
     <div className={styles.board}>
@@ -38,9 +13,7 @@ export const Board = () => {
         <div className={styles.gameOver}>
           <p>Game Over!</p>
           <p className={styles.winner}>{getWinner(player1, player2)}</p>
-          <Button variant="primary" onClick={handleReset}>
-            New Game
-          </Button>
+          <Button variant="primary">New Game</Button>
           <Button variant="secondary">Settings</Button>
         </div>
       )}
@@ -52,8 +25,8 @@ export const Board = () => {
               player1.claimed.includes(Number(item)) && styles.player1,
               player2.claimed.includes(Number(item)) && styles.player2,
             ])}
-            onClick={handleNextTurn}
-            disabled={!rolls}
+            // onClick={handleNextTurn}
+            // disabled={!rolls}
             key={item}
           >
             {item}

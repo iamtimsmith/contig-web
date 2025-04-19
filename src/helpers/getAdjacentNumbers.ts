@@ -1,4 +1,4 @@
-import { boardNumbers } from "~/constants";
+import { boardNumbers } from "src/constants";
 
 export const getAdjacentNumbers = (num: number) => {
   const index = boardNumbers.indexOf(num);

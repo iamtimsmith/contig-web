@@ -1,4 +1,0 @@
-.container {
-  max-width: calc(var(--grid-size) * 8);
-  margin: 0 auto;
-}
