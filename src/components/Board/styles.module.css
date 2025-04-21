@@ -40,6 +40,7 @@
   height: var(--grid-size);
   border: 0.063rem solid var(--text-color);
   background: transparent;
+  color: var(--text-color);
   font-size: calc(var(--grid-size) / 3);
   display: flex;
   justify-content: center;
