@@ -1,27 +1,24 @@
-import { useDiceContext } from "~/contexts/Dice";
-import { useGameContext } from "~/contexts/Game";
 import { Button } from "~/components/Button";
 import styles from "./styles.module.css";
-import { diceResults } from "~/constants";
+import { DICE_RESULTS } from "~/constants";
+import { useStore } from "~/store";
 
 export const DiceRoller = () => {
-  const { turn } = useGameContext();
-  const { rolls, handleRollDice } = useDiceContext();
+  const { isGameOver, rolls, rollDice } = useStore();
 
-  // If the game has not started, do not show the dice roller
-  if (turn === 0) return;
+  if (isGameOver) return <p />;
 
   return (
     <div className={styles.diceRoller}>
       <div>
-        <Button className={styles.button} onClick={handleRollDice}>
+        <Button className={styles.button} onClick={rollDice}>
           Roll
         </Button>
       </div>
       <span className={styles.rolls}>
         {
           // @ts-expect-error-ignore
-          rolls?.map((roll) => diceResults[roll]).join(" ")
+          rolls?.map((roll) => DICE_RESULTS[roll]).join(" ")
         }
       </span>
     </div>

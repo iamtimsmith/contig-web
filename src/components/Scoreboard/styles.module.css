@@ -1,6 +1,6 @@
 .scoreboard {
   position: relative;
-  border: 1px solid;
+  border: 0.063rem solid var(--border-color);
 }
 
 .title {

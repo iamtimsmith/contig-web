@@ -1,0 +1,30 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem 0;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+ul,
+ol {
+  text-align: left;
+}
+
+li {
+  margin: 0 0 1rem;
+}
+
+input {
+  padding: 0.375rem;
+}
+
+a {
+  color: var(--accent-color);
+}

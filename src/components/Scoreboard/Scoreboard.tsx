@@ -1,12 +1,9 @@
-import { useGameContext } from "~/contexts/Game";
+import { useStore } from "~/store";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
 export const Scoreboard = () => {
-  const { player1, player2, turn } = useGameContext();
-
-  // If the game has not started, do not show the scoreboard
-  if (turn === 0) return null;
+  const { player1, player2, turn } = useStore();
 
   return (
     <div className={styles.scoreboard}>

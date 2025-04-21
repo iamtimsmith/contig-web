@@ -1,0 +1,14 @@
+.container {
+  max-width: calc(var(--grid-size) * 8);
+  margin: 0 auto;
+  text-align: center;
+  color: inherit;
+}
+
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+}

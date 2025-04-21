@@ -43,6 +43,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.item:disabled {
+  color: var(--text-color);
+  cursor: default;
 }
 
 .item.player1 {

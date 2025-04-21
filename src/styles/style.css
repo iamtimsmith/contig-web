@@ -1,17 +1,2 @@
-:root {
-  --grid-size: 75px;
-  --text-color: #000;
-  --bg-color: #fff;
-  --player1-color: #c0ffee;
-  --player2-color: #ffcc00;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-}
+@import "./_variables.css";
+@import "./_global.css";

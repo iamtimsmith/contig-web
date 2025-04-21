@@ -1,0 +1,7 @@
+.icon {
+  border: 0.125rem solid var(--text-color);
+}
+
+.icon * {
+  fill: var(--text-color);
+}
