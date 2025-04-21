@@ -2,6 +2,15 @@
   --grid-size: 75px;
   --text-color: #000;
   --bg-color: #fff;
+  --border-color: #ccc;
+  --accent-color: #00008b;
   --player1-color: #c0ffee;
   --player2-color: #ffcc00;
+}
+
+:root[data-theme="dark"] {
+  --text-color: #fff;
+  --bg-color: #000;
+  --border-color: #333;
+  --accent-color: #add8e6;
 }

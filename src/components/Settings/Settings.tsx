@@ -2,7 +2,7 @@ import { useStore } from "~/store";
 import styles from "./styles.module.css";
 import type { ChangeEvent } from "react";
 
-export const PlayerSettings = () => {
+export const Settings = () => {
   const { player1, player2, changeMaxTurns, turn, setPlayer1, setPlayer2 } =
     useStore();
 

@@ -1,6 +1,6 @@
 .group {
   position: relative;
-  border: 1px solid;
+  border: 0.063rem solid var(--border-color);
   padding: 0.75rem;
   text-align: left;
   margin: 1.5rem 0;

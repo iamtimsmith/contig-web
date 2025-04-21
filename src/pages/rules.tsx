@@ -43,8 +43,24 @@ place his marker on the proper uncovered square. </li> */}
         cumulative score wins.
       </li> */}
     </ol>
+    <p>
+      <small>
+        Rules are adapted from the{" "}
+        <a
+          href="https://www.aft.org/sites/default/files/media/2014/pd_ignitingfire_games_contig.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          aft.org ruleset
+        </a>
+        .
+      </small>
+    </p>
     <Button as={Link} to="/game" variant="primary">
       Start a Game
+    </Button>
+    <Button as={Link} to="/" variant="secondary">
+      Main Menu
     </Button>
   </>
 );

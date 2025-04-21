@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 1rem 0;
   font-family: sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -23,4 +23,8 @@ li {
 
 input {
   padding: 0.375rem;
+}
+
+a {
+  color: var(--accent-color);
 }
