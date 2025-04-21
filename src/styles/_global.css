@@ -20,3 +20,7 @@ ol {
 li {
   margin: 0 0 1rem;
 }
+
+input {
+  padding: 0.375rem;
+}

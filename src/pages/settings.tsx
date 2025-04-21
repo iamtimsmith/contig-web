@@ -1,3 +1,4 @@
+import { PlayerSettings } from "~/components/PlayerSettings";
 import type { Route } from "../+types/root";
 
 export const meta = ({}: Route.MetaArgs) => [
@@ -9,7 +10,7 @@ export const SettingsPage = () => {
   return (
     <div>
       <h1>Settings</h1>
-      <p>Settings page content goes here.</p>
+      <PlayerSettings />
     </div>
   );
 };

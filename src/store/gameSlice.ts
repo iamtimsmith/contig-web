@@ -1,5 +1,5 @@
 import type { StateCreator } from "zustand";
-import { BOARD_NUMBERS, MAX_TURNS } from "~/constants";
+import { BOARD_NUMBERS, DEFAULT_MAX_TURNS } from "~/constants";
 import { useStore } from ".";
 import { getAdjacentNumbers } from "~/helpers/getAdjacentNumbers";
 
@@ -16,7 +16,9 @@ export interface GameSlice {
     [key: string]: boolean;
   };
   isGameOver: boolean;
+  maxTurns: number;
   turn: number;
+  changeMaxTurns: (maxTurns: number) => void;
   nextTurn: (selected?: number, score?: number) => void;
   resetGame: () => void;
   selectNumber: (num: number) => void;
@@ -25,15 +27,19 @@ export interface GameSlice {
 export const createGameSlice: StateCreator<GameSlice> = (set, get) => ({
   board: initialState,
   isGameOver: false,
+  maxTurns: DEFAULT_MAX_TURNS,
   turn: 1,
+  changeMaxTurns: (maxTurns: number) => {
+    set({ maxTurns });
+  },
   nextTurn: (selected?: number, score = 0) => {
     const { player1, player2, resetDice, setPlayer1, setPlayer2 } =
       useStore.getState();
-    const { turn } = get();
+    const { maxTurns, turn } = get();
     // If player 2's turn, increase the turn number
     if (player2.isTurn) {
       // End the game if the max turns have been reached
-      if (turn + 1 <= MAX_TURNS) {
+      if (turn < maxTurns) {
         // Update state for players and turn
         setPlayer1({ ...player1, isTurn: true });
         setPlayer2({

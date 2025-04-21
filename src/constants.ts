@@ -5,7 +5,7 @@ export const BOARD_NUMBERS = [
   125, 144, 150, 180, 216,
 ];
 
-export const MAX_TURNS = 1;
+export const DEFAULT_MAX_TURNS = 1;
 
 export const DICE_RESULTS = {
   1: "⚀",
