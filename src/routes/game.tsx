@@ -1,5 +1,6 @@
 import { Board } from "~/components/Board";
 import type { Route } from "../+types/root";
+import { Scoreboard } from "~/components/Scoreboard";
 
 export const meta = ({}: Route.MetaArgs) => [
   { title: "Game | Contig" },
@@ -9,6 +10,7 @@ export const meta = ({}: Route.MetaArgs) => [
 const GamePage = () => {
   return (
     <>
+      <Scoreboard />
       <Board />
     </>
   );

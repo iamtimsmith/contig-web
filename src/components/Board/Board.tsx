@@ -3,9 +3,11 @@ import styles from "./styles.module.css";
 import { getWinner } from "~/helpers/getWinner";
 import { useStore } from "~/store";
 import clsx from "clsx";
+import { Link } from "react-router";
 
 export const Board = () => {
-  const { board, isGameOver, player1, player2 } = useStore();
+  const { board, isGameOver, player1, player2, resetGame, selectNumber } =
+    useStore();
 
   return (
     <div className={styles.board}>
@@ -13,8 +15,12 @@ export const Board = () => {
         <div className={styles.gameOver}>
           <p>Game Over!</p>
           <p className={styles.winner}>{getWinner(player1, player2)}</p>
-          <Button variant="primary">New Game</Button>
-          <Button variant="secondary">Settings</Button>
+          <Button onClick={() => resetGame()} variant="primary">
+            New Game
+          </Button>
+          <Button as={Link} to="/settings" variant="secondary">
+            Settings
+          </Button>
         </div>
       )}
       <div className={clsx([styles.grid, isGameOver && styles.disabled])}>
@@ -25,7 +31,7 @@ export const Board = () => {
               player1.claimed.includes(Number(item)) && styles.player1,
               player2.claimed.includes(Number(item)) && styles.player2,
             ])}
-            // onClick={handleNextTurn}
+            onClick={() => selectNumber(Number(item))}
             // disabled={!rolls}
             key={item}
           >
