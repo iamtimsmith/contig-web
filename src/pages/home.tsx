@@ -11,7 +11,21 @@ export const meta = ({}: Route.MetaArgs) => [
 const HomePage = () => {
   return (
     <>
-      <BoardIcon />
+      <BoardIcon style={{ margin: "1rem 0" }} />
+      <p>
+        <span
+          style={{
+            fontWeight: "bold",
+            fontFamily: "serif",
+            fontSize: "1.2rem",
+          }}
+        >
+          Contig
+        </span>{" "}
+        is a math game where players roll dice and use them to make number
+        sentences, aiming to cover numbers on a game board and score points for
+        each adjacent covered number.
+      </p>
       <Button as={Link} to="/game" variant="primary">
         New Game
       </Button>

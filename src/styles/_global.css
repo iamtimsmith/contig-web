@@ -21,8 +21,16 @@ li {
   margin: 0 0 1rem;
 }
 
+label {
+  font-size: 0.875rem;
+}
+
 input {
   padding: 0.375rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: 0.063rem solid var(--text-color);
+  font-size: 1rem;
 }
 
 a {
