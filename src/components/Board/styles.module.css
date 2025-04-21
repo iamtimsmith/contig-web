@@ -37,7 +37,7 @@
 .item {
   width: 100%;
   height: var(--grid-size);
-  border: 1px solid black;
+  border: 0.063rem solid var(--text-color);
   background: transparent;
   font-size: calc(var(--grid-size) / 3);
   display: flex;

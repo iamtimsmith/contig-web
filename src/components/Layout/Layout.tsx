@@ -18,6 +18,12 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             </Link>
           </header>
           <main>{children}</main>
+          <footer>
+            <p className={styles.credit}>
+              Built with ❤️ by{" "}
+              <a href="https://www.iamtimsmith.com">Tim Smith</a>.
+            </p>
+          </footer>
           <ScrollRestoration />
           <Scripts />
         </div>
