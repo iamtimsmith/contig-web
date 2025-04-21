@@ -15,10 +15,23 @@
 
 .info {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0.75rem 0.5rem;
+  text-align: left;
+}
+
+.info p {
+  margin: 0 0 0.5rem;
 }
 
 .isTurn > span {
   font-weight: bold;
+}
+
+@media screen and (min-width: 320px) {
+  .info {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }

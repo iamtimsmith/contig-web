@@ -11,6 +11,8 @@
   font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
+  display: inline-block;
+  margin: 0 0 1rem;
 }
 
 .credit {

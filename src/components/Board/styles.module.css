@@ -27,7 +27,8 @@
 .grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(8, var(--grid-size));
+  grid-template-columns: repeat(8, 1fr);
+  max-width: 100%;
 }
 
 .grid.disabled {
