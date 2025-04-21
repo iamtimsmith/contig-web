@@ -27,7 +27,8 @@ export const createGameSlice: StateCreator<GameSlice> = (set, get) => ({
   isGameOver: false,
   turn: 1,
   nextTurn: (selected?: number, score = 0) => {
-    const { player1, player2, setPlayer1, setPlayer2 } = useStore.getState();
+    const { player1, player2, resetDice, setPlayer1, setPlayer2 } =
+      useStore.getState();
     const { turn } = get();
     // If player 2's turn, increase the turn number
     if (player2.isTurn) {
@@ -70,6 +71,7 @@ export const createGameSlice: StateCreator<GameSlice> = (set, get) => ({
       });
       setPlayer2({ ...player2, isTurn: true });
     }
+    resetDice();
   },
   resetGame: () => {
     const { resetPlayers } = useStore.getState();

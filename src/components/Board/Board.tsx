@@ -6,8 +6,15 @@ import clsx from "clsx";
 import { Link } from "react-router";
 
 export const Board = () => {
-  const { board, isGameOver, player1, player2, resetGame, selectNumber } =
-    useStore();
+  const {
+    board,
+    isGameOver,
+    player1,
+    player2,
+    resetGame,
+    rolls,
+    selectNumber,
+  } = useStore();
 
   return (
     <div className={styles.board}>
@@ -32,7 +39,7 @@ export const Board = () => {
               player2.claimed.includes(Number(item)) && styles.player2,
             ])}
             onClick={() => selectNumber(Number(item))}
-            // disabled={!rolls}
+            disabled={!rolls}
             key={item}
           >
             {item}

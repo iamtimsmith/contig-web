@@ -11,3 +11,12 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
+ul,
+ol {
+  text-align: left;
+}
+
+li {
+  margin: 0 0 1rem;
+}
